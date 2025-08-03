@@ -2,6 +2,8 @@
 #undef TARGET_SYX
 #define TARGET_SYX 1
 
+#define OPTION_MUSL 1
+
 /* Default arguments you want when running your
    i686-myos-gcc/x86_64-myos-gcc toolchain */
 #undef LIB_SPEC
@@ -19,7 +21,8 @@
 #define ENDFILE_SPEC "crtend.o%s"
 
 #undef LINK_SPEC
-#define LINK_SPEC "%{shared:-shared} %{static:-static} %{!shared: %{!static: %{rdynamic:-export-dynamic}}}"
+#define LINK_SPEC "%{shared:-shared} %{static:-static} %{!shared: %{!static: %{rdynamic:-export-dynamic}}} \
+    -dynamic-linker /root/ld-musl-i386.so.1"
 
 /* Additional predefined macros. */
 #undef TARGET_OS_CPP_BUILTINS
