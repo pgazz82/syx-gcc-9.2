@@ -162,6 +162,7 @@ typedef __PTRDIFF_TYPE__ ptrdiff_t;
    or if we want this type in particular.  */
 #if defined (_STDDEF_H) || defined (__need_size_t)
 #ifndef __size_t__	/* BeOS */
+#ifndef __DEFINED_size_t /* musl */
 #ifndef __SIZE_T__	/* Cray Unicos/Mk */
 #ifndef _SIZE_T	/* in case <sys/types.h> has defined it. */
 #ifndef _SYS_SIZE_T_H
@@ -179,6 +180,7 @@ typedef __PTRDIFF_TYPE__ ptrdiff_t;
 #ifndef _SIZET_
 #ifndef __size_t
 #define __size_t__	/* BeOS */
+#define __DEFINED_size_t /* musl */
 #define __SIZE_T__	/* Cray Unicos/Mk */
 #define _SIZE_T
 #define _SYS_SIZE_T_H
@@ -227,6 +229,7 @@ typedef long ssize_t;
 #endif /* _SYS_SIZE_T_H */
 #endif /* _SIZE_T */
 #endif /* __SIZE_T__ */
+#endif /* __DEFINED_size_t */
 #endif /* __size_t__ */
 #undef	__need_size_t
 #endif /* _STDDEF_H or __need_size_t.  */
