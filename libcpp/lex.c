@@ -406,7 +406,8 @@ search_line_sse2 (const uchar *s, const uchar *end ATTRIBUTE_UNUSED)
   return (const uchar *)p + found;
 }
 
-#ifdef HAVE_SSE4
+/*#ifdef HAVE_SSE4*/
+#if 0
 /* A version of the fast scanner using SSE 4.2 vectorized string insns.  */
 
 static const uchar *
