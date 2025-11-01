@@ -510,7 +510,7 @@ init_vectorized_lexer (void)
 #elif defined(__SSE__)
   minimum = 1;
 #endif
-
+/*
   if (minimum == 3)
     impl = search_line_sse42;
   else if (__get_cpuid (1, &dummy, &dummy, &ecx, &edx) || minimum == 2)
@@ -528,7 +528,7 @@ init_vectorized_lexer (void)
 	  || (edx & (bit_MMXEXT | bit_CMOV)) == (bit_MMXEXT | bit_CMOV))
 	impl = search_line_mmx;
     }
-
+*/
   search_line_fast = impl;
 }
 
